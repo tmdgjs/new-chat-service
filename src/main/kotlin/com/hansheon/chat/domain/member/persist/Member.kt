@@ -24,22 +24,22 @@ class Member private constructor(
     val name: String,
 
     @Column(name = "gender")
-    val gender: Gender,
+    val gender: Gender?,
 
     @Column(name = "birth")
-    val birth: LocalDate,
+    val birth: LocalDate?,
 
     @Column(name = "profile_image")
-    val profileImage: String
+    val profileImage: String?
 ) {
 
     /* 비즈니스 로직 */
     companion object {
 
         fun createMember(name: String,
-                         gender: Gender,
-                         birth: LocalDate,
-                         profileImage: String,
+                         gender: Gender?,
+                         birth: LocalDate?,
+                         profileImage: String?,
                          id: Long = 0L): Member {
             return Member(id, name, gender, birth, profileImage)
         }

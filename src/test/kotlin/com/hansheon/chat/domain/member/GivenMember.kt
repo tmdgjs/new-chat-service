@@ -14,4 +14,8 @@ object GivenMember {
     fun toMember(): Member {
         return Member.createMember(NAME, GENDER, BIRTH, PROFILE_IMAGE)
     }
+
+    fun toMember(id: Long): Member {
+        return Member.createMember(NAME, GENDER, BIRTH, PROFILE_IMAGE, id)
+    }
 }
