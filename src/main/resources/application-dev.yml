@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 
 spring:
   application:
@@ -20,7 +20,7 @@ spring:
     open-in-view: false
     show-sql: true
     hibernate:
-      ddl-auto: none # 이미 운영중인 DB를 건드리므로, 실수로라도 변경되지 않도록 DDL 자동 관련 코드는 모두 꺼두자.
+      ddl-auto: create # 이미 운영중인 DB를 건드리므로, 실수로라도 변경되지 않도록 DDL 자동 관련 코드는 모두 꺼두자.
     generate-ddl: false #
     properties:
       hibernate:
