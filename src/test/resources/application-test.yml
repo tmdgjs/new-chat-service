@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: chat-service
+
+  config:
+    activate:
+      on-profile: test
+
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;IGNORECASE=TRUE;DB_CLOSE_DELAY=-1;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+server:
+  port: 8090
+  shutdown: graceful

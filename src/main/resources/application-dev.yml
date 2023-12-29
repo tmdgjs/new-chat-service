@@ -1,0 +1,31 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: chat-service
+
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/chat?serverTimezone=Asia/Seoul&characterEncoding=utf8&allowPublicKeyRetrieval=true&autoReconnection=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none # 이미 운영중인 DB를 건드리므로, 실수로라도 변경되지 않도록 DDL 자동 관련 코드는 모두 꺼두자.
+    generate-ddl: false #
+    properties:
+      hibernate:
+        format_sql: true
+      hibernate.default_batch_fetch_size: 1000
+      hibernate.query.plan_cache_max_size: 800
+      hibernate.query.plan_parameter_metadata_max_size: 32
+
